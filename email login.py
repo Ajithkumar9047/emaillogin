@@ -9,21 +9,26 @@ def check(email):
       print("enter mail id is wrong")
 
 def passwords(password):
- if  (5 < (len(password)) > 18):
-   print("password length must be greater than 5 and less than 18")
-   if not re.search('[A-Z]', password):
-     print("password required atleast one upper case A-Z")
-     if not re.search("[a-z]", password):
+    i = len(password)
+    if not (5 < (i)):
+        print("password length must be greater than 5")
+    elif (18 < (i)):
+        print("password must be less than 18")
+
+    elif not re.search('[A-Z]', password):
+        print("password required atleast one upper case A-Z")
+    elif not re.search("[a-z]", password):
         print("password required atleast one lower case a-z")
-        if not re.search("[0-9]", password):
-         print("password required atleast one numeric case 0-9")
-         if re.search("[\s]", password):
-            print('there is no space between password')
-            if not re.search("[/_&%#@]", password):
-             print("password required atleat one special character")
- else:
-  print(F" {password} is correct")
- write()
+    elif not re.search("[0-9]", password):
+        print("password required atleast one numeric case 0-9")
+    elif re.search("[\s]", password):
+        print('there is no space between password')
+    elif not re.search("[/_&%#@]", password):
+        print("password required atleat one splecal character")
+
+    else:
+        print(F" {password} is correct")
+        write()
 
 def write():
   dic = {"username": email, "password": password}
