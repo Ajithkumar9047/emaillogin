@@ -8,22 +8,34 @@ def check(email):
    else:
       print("enter mail id is wrong")
 
+def repass():
+    re = input('reenter')
+
+    passwords(re)
+
 def passwords(password):
     i = len(password)
     if not (5 < (i)):
         print("password length must be greater than 5")
+        repass()
     elif (18 < (i)):
         print("password must be less than 18")
+        repass()
     elif not re.search('[A-Z]', password):
         print("password required atleast one upper case A-Z")
+        repass()
     elif not re.search("[a-z]", password):
         print("password required atleast one lower case a-z")
+        repass()
     elif not re.search("[0-9]", password):
         print("password required atleast one numeric case 0-9")
+        repass()
     elif re.search("[\s]", password):
         print('there is no space between password')
+        repass()
     elif not re.search("[/_&%#@]", password):
         print("password required atleat one splecal character")
+        repass()
     else:
         print(F" {password} is correct")
         write()
