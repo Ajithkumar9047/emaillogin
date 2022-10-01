@@ -14,7 +14,6 @@ def passwords(password):
         print("password length must be greater than 5")
     elif (18 < (i)):
         print("password must be less than 18")
-
     elif not re.search('[A-Z]', password):
         print("password required atleast one upper case A-Z")
     elif not re.search("[a-z]", password):
@@ -25,7 +24,6 @@ def passwords(password):
         print('there is no space between password')
     elif not re.search("[/_&%#@]", password):
         print("password required atleat one splecal character")
-
     else:
         print(F" {password} is correct")
         write()
