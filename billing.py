@@ -16,36 +16,56 @@ def value():
      writer = csv.writer(file)
      writer.writerow(h)
    file.close()
+a = st.sidebar.radio("Navigation",["working rules","Home","about us","version"])
+if a=="working rules":
+     st.header("WELCOME TO SETHURAM TRADERS")
+     st.write("step1.Select all your inputs,")
+     st.write("step2.download the folder you work for the project ,")
+     st.write("step3.first time only you should download as folder after that you just click add to save data automatically,")
+     st.write("step4.current pathway of the folder is C:/Users/Star World/Downloads/{file_name}.csv ")
 
-st.header("SETHURAM TRADERS",)
-st.subheader("Greeting to All")
-st.text("Let start to work")
-product=st.radio("cakesname",["plain","plums","cream","black_forest","birthday_cake"])
-kilo = st.number_input("enter your data limit",0,10)
-file_name=st.text_input("enter file name to download")
+if a=="version":
 
-button1=st.button("add")
-if product=="plain":
+     st.write("streamlit---1.13.0")
+     st.write("pandas---1.5.0")
+
+if a=="about us" :
+    st.header("ABOUT")
+    st.subheader("In this application is made for model of simple billing purpose")
+    st.header("FOUNDERS")
+    st.write("1.Jethuram Jeyabal-founder")
+    st.write("2.Jeyashree Sethuram-co.founder")
+    st.write("3.Ajithkumar Sekar-App developer")
+if a=="Home":
+ st.header("SETHURAM TRADERS",)
+ st.subheader("Greeting to All")
+ st.text("Let start to work")
+ product=st.radio("cakesname",["plain","plums","cream","black_forest","birthday_cake"])
+ kilo = st.number_input("enter your data limit",0,10)
+ file_name=st.text_input("enter file name to download")
+
+ button1=st.button("add")
+ if product=="plain":
     kg=kilo
     total = kg * 240
     st.markdown(total)
     value()
-if product=="plums":
+ if product=="plums":
     kg=kilo
     total = kg * 120
     st.markdown(total)
     value()
-if product=="cream":
+ if product=="cream":
     kg=kilo
     total = kg * 220
     st.markdown(total)
     value()
-if product=="black_forest":
+ if product=="black_forest":
     kg=kilo
     total = kg * 230
     st.markdown(total)
     value()
-if product=="birthday_cake":
+ if product=="birthday_cake":
     kg=kilo
     total = kg * 320
     st.markdown(total)
