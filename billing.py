@@ -4,15 +4,15 @@ import streamlit as st
 def value():
   values={"products":[product],"kilogram":[kg],"total":[total]}
 
-  df=pd.DataFrame(values,columns=["products","kilogram","total"],index=[1])
+  df=pd.DataFrame(values,columns=["products","kilogram","total"])
+  df.set_index("products",inplace=True)
   st.dataframe(df)
-  if button:
-      df.to_csv(f'{file_name}.csv', index=False, encoding='utf=8')
-      df.Store_csv = True
-      df.Output = f'{file_name}.csv'
+  button = st.download_button("create new folder", df.to_csv(),file_name=f"{file_name}.csv",mime='text/csv')
+  path=f"C:/Users/Star World/Downloads/{file_name}.csv "
   if button1:
-   with open(f'{file_name}.csv', 'a',newline='') as file:
-     h=[product,kg,total]
+
+   with open(f'{path}', 'a',newline='') as file:
+     h=([product,kg,total])
      writer = csv.writer(file)
      writer.writerow(h)
    file.close()
@@ -23,7 +23,7 @@ st.text("Let start to work")
 product=st.radio("cakesname",["plain","plums","cream","black_forest","birthday_cake"])
 kilo = st.number_input("enter your data limit",0,10)
 file_name=st.text_input("enter file name to download")
-button=st.button("create new folder")
+
 button1=st.button("add")
 if product=="plain":
     kg=kilo
