@@ -37,7 +37,7 @@ if a=="Home":
     df = pd.DataFrame(tweetdata, columns=['date', 'tweets', "username", 'url','retweet'])
     df.to_csv(f'{file_name}.csv', index=False, encoding='utf=8')
     g = df.to_dict("records")
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+     client = pymongo.MongoClient("mongodb+srv://ajithkumaraji9047:<password>@cluster0.f8nzez2.mongodb.net/?retryWrites=true&w=majority")
     mydb = client["mydatabase"]
     mycol = mydb["twitterscraper"]
 
