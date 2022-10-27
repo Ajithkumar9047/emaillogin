@@ -14,7 +14,7 @@ def value():
 
   if button1:
 
-   with open(os.path.join(f"C:/Users/Star World/Downloads/{file_name}.csv "), 'a',newline='') as file:
+   with open(f"C:/Users/Star World/Downloads/abi.csv ", 'a',newline='') as file:
      h=([product,kg,total])
      writer = csv.writer(file)
      writer.writerow(h)
