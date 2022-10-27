@@ -8,10 +8,10 @@ def value():
   df.set_index("products",inplace=True)
   st.dataframe(df)
   button = st.download_button("create new folder", df.to_csv(),file_name=f"{file_name}.csv",mime='text/csv')
-  path=f"C:/Users/Star World/Downloads/{file_name}.csv "
+
   if button1:
 
-   with open(f'{path}', 'a',newline='') as file:
+   with open(f"C:/Users/Star World/Downloads/{file_name}.csv ", 'a',newline='') as file:
      h=([product,kg,total])
      writer = csv.writer(file)
      writer.writerow(h)
