@@ -1,6 +1,9 @@
+import os
+
 import pandas as pd
 import csv
 import streamlit as st
+import os
 def value():
   values={"products":[product],"kilogram":[kg],"total":[total]}
 
@@ -11,7 +14,7 @@ def value():
 
   if button1:
 
-   with open(f"C:/Users/Star World/Downloads/{file_name}.csv ", 'a',newline='') as file:
+   with open(os.path.join(f"C:/Users/Star World/Downloads/{file_name}.csv "), 'a',newline='') as file:
      h=([product,kg,total])
      writer = csv.writer(file)
      writer.writerow(h)
