@@ -44,7 +44,7 @@ if a=="Home":
  st.subheader("Greeting to All")
  st.text("Let start to work")
  product=st.radio("cakesname",["plain","plums","cream","black_forest","birthday_cake"])
- kilo = st.number_input("enter your data limit",0,10)
+ kilo = st.number_input("enter kg of cake",0,10)
  file_name=st.text_input("enter file name to download")
 
  button1=st.button("add")
