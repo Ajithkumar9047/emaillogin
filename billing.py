@@ -1,24 +1,32 @@
-import os
-
 import pandas as pd
 import csv
 import streamlit as st
-import os
+import pymongo
 def value():
   values={"products":[product],"kilogram":[kg],"total":[total]}
 
   df=pd.DataFrame(values,columns=["products","kilogram","total"])
   df.set_index("products",inplace=True)
   st.dataframe(df)
+  import requests
+  from requests import auth
+
+  me = auth.HTTPDigestAuth("admin", "admin")
+  requests_headers = {'Content-type': 'application/json'}
+  g = df.to_json()
+  st.markdown(g)
+  requests.put('http://localhost:8000/v1/documents?uri=a.json', auth=me, headers=requests_headers, data=g)
+
+
   button = st.download_button("create new folder", df.to_csv(),file_name=f"{file_name}.csv",mime='text/csv')
 
   if button1:
 
-   with open(f"C:/Users/Star World/Downloads/abi.csv ", 'a',newline='') as file:
+   with open("https://github.com/Ajithkumar9047/email-login/edit/main/ajith.csv#L2", 'a',newline='') as file:
      h=([product,kg,total])
      writer = csv.writer(file)
      writer.writerow(h)
-   file.close()
+     file.close()
 a = st.sidebar.radio("Navigation",["working rules","Home","about us","version"])
 if a=="working rules":
      st.header("WELCOME TO SETHURAM TRADERS")
@@ -44,7 +52,7 @@ if a=="Home":
  st.subheader("Greeting to All")
  st.text("Let start to work")
  product=st.radio("cakesname",["plain","plums","cream","black_forest","birthday_cake"])
- kilo = st.number_input("enter kg of cake",0,10)
+ kilo = st.number_input("enter your data limit",0,10)
  file_name=st.text_input("enter file name to download")
 
  button1=st.button("add")
