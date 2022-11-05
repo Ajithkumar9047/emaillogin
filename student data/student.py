@@ -79,7 +79,7 @@ with open("C:/Users/Star World/Downloads/student.json") as file:
     print(k)
     client1 = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb1 = client1["mydatabase1"]
-    mycol1 = mydb["customers6"]
+    mycol1 = mydb["customers7"]
     u = mycol1.insert_many([k])
     for y in mycol1.find():
       print(u)
