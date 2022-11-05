@@ -1,18 +1,22 @@
 import re
-
+'''regular expression used to create rule for email id'''
 regex="[a-z0-9]+[\.]?[a-z0-9]+[@]\w+[.]\w{2,3}$"
+
+'''define email id to check wron or right'''
 def check(email):
 
    if (re.search(regex,email)):
       print("mail id is correct")
    else:
       print("enter mail id is wrong")
-
+      
+'''define to re-enter password'''
 def repass():
     re = input('reenter')
 
     passwords(re)
-
+   
+'''define to check password'''
 def passwords(password):
     i = len(password)
     if not (5 < (i)):
@@ -39,12 +43,14 @@ def passwords(password):
     else:
         print(F" {password} is correct")
         write()
-
+      
+'''save the password as text file '''
 def write():
   dic = {"username": email, "password": password}
   f =  open("D:/doc/aji.txt", "x")
   f.writelines(f" {dic} ")
 
+'''define to forgot password due to relogin'''
 def forgot():
  f2=input("choose forgotpassword or exit")
  if re.findall("[\b,forgotpassword]",f2):
@@ -55,6 +61,8 @@ def forgot():
         print("enter id is wrong")
  else:
    print("exit")
+
+'''define to login after create email login'''   
 def login(button):
     if  re.search("[\b,login]",button):
         login_id=input("enter your login id")
@@ -72,6 +80,8 @@ def login(button):
 
     else:
      print("exit")
+   
+'''if condition for first load the code'''   
 if __name__=="__main__":
  email=input("enter your email")
  check(email)
