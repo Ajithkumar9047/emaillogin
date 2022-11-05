@@ -1,4 +1,6 @@
 import pymongo
+
+'''defitition used to inser data from mongo db'''
 def insert():
     name = input("enter your name")
     place = input("enter your place")
@@ -13,12 +15,16 @@ def insert():
             "phone_number": f'{phone_number}'
                }
     x = mycol.insert_one( mydict)
+ 
+'''definition used to read or retrive data from database'''
 def retrive():
     client = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = client["telephone"]
     mycol = mydb["directory"]
     for x in mycol.find():
         print(x)
+        
+'''definition used to update already entered data and new feild to add to data'''       
 def update():
     old_index = input("enter your  old_index like name ,gender,place,mobile_number")
     old_data=input("enter old data ")
@@ -31,6 +37,8 @@ def update():
     myquerey={"$set":{(f'{update_index}'):f'{update_data}'}}
     mycol.update_one(old_querey,myquerey)
     print(f"{update_data}has been updated successfully")
+    
+'''definition used to delete the data from database'''    
 def delete():
     delete_index = input("enter your delete index like name ,gender,place")
     delete_data = input("enter your data to delete")
@@ -41,6 +49,8 @@ def delete():
     for x in mycol.find():
         print(x)
     print(f"has been deleted successfully")
+    
+'''get value to call the definition'''    
 print("WELCOME TO TELEPHONE DIRECTORY")
 print("enter 1 to insert data")
 print("enter 2 to retrive data")
