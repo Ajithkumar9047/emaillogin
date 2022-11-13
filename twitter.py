@@ -1,4 +1,4 @@
-
+import pyrebase
 import streamlit as st
 import pandas as pd
 import snscrape.modules.twitter as sntwitter
@@ -26,14 +26,26 @@ try:
     st.dataframe(df)
     file_name = st.text_input('Name the CSV file:')
     st.download_button("Download as CSV", df.to_csv(), file_name=f'{file_name}.csv', mime='text/csv')
-    g = df.to_dict("records")
+
     if st.button("Upload into MongoDB"):
-      client = pymongo.MongoClient("mongodb://localhost:27017/")
-      my_db = client["scrapped_database"]
-      my_col = my_db["twitter"]
-      x = my_col.insert_many(g)
-      for x in my_col.find():
-          st.markdown(x)
+        config = {'apiKey': "AIzaSyChEJILixmFxMhyImwUyrVwaHpYqVt4oRw",
+                  'authDomain': "onyx-elevator-352407.firebaseapp.com",
+                  'databaseURL': "https://onyx-elevator-352407-default-rtdb.firebaseio.com",
+                  'projectId': "onyx-elevator-352407",
+                  'storageBucket': "onyx-elevator-352407.appspot.com",
+                  'messagingSenderId': "913631374819",
+                  'appId': "1:913631374819:web:9457f51b7c22e1799604d6",
+                  'measurementId': "G-QS1LWR421D"}
+        firebase = pyrebase.initialize_app(config)
+        database = firebase.database()
+        g = df.to_json(orient ='columns')
+        st.markdown(g)
+        data = {'animal': ['cat', 'cat', 'snake', 'dog', 'dog', 'cat', 'snake', 'cat', 'dog', 'dog'],
+                'age': [2.5, 3, 0.5, 0, 5, 2, 4.5, 0, 7, 3],
+                'visits': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+                'priority': ['yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'no', 'no']}
+        database.push(g)
+
 except:
        st.error("something wrong--please re-enter your value")
 if a=="About us":
