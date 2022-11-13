@@ -4,3 +4,4 @@ pandas==1.5.0
 streamlit==1.13.0
 snscrape==0.4.3.20220106
 pymongo==4.2.0
+pyrebase==5.0.1
