@@ -1,15 +1,17 @@
 import streamlit as st
 import pandas as pd
 import pyrebase
-
-#steamlit sidebar for application decoration
-a = st.sidebar.radio("Navigation",["working rules","Home","about us","version"])
-if a=="working rules":
+#'''This is for streamlit sidebar for mode window and decoration into our application'''
+a = st.sidebar.radio("Navigation",["Home","PROJECT","about us","version"])
+if a=="Home":
      st.header("WELCOME TO SETHURAM TRADERS")
-     st.write("step1.Select all your inputs,")
-     st.write("step2.download the folder you work for the project ,")
-     st.write("step3.first time only you should download as folder after that you just click add to save data automatically,")
-     st.write("step4.current pathway of the folder is C:/Users/Star World/Downloads/{file_name}.csv ")
+     st.subheader("Introduction")
+     st.write("In this application major used for bakery shops .It can be easy and quick understandable application")
+     st.subheader("advantages")
+     st.write("1.Costless application")
+     st.write("2.Easy understandable")
+     st.write("3.we can able to store the data to data base")
+     st.header("MOBILE USERS..PLEASE PRESS THE ARROW MARK ON TOP LEFT SIDE")
 
 if a=="version":
 
@@ -25,23 +27,28 @@ if a=="about us" :
     st.write("1.Jethuram Jeyabal-founder")
     st.write("2.Jeyashree Sethuram-co.founder")
     st.write("3.Ajithkumar Sekar-App developer")
-if a=="Home":
- st.header("SETHURAM TRADERS",)
- st.subheader("Greeting to All")
- st.text("Let start to work")
- date=st.date_input('date input')
+if a=="PROJECT":
+ st.header("SETHURAM TRADERS",)     #heading for our application
+ st.subheader("Greeting to All")    #sub heading for our application
+ st.text("Let start to work")       #text for streamlit
+ date=st.date_input('date input')   #date input button
+
+ # creating columns for our application button
  col1, col2, col3 = st.columns(3)
- # plum cake
+
+ # plum cake front end using 'html'
 
  with col1:
         st.markdown('<p style="font-size:20px">plum cake <br /> 1kg=240</p>', unsafe_allow_html=True)
 
+# in this column get product kg and calculate total
  with col2:
         number = st.number_input(label="plum kg", step=0.5, format="%.1f")
         kg = 250
         total = kg * number
  with col3:
         st.write(f'<p style="font-size:25px">amount <br /> {total}</p>', unsafe_allow_html=True)
+
  # plain cake
  with col1:
         st.markdown('<p style="font-size:20px">plain cake <br /> 1kg=240</p>', unsafe_allow_html=True)
@@ -63,6 +70,7 @@ if a=="Home":
         total2 = kg2 * number2
  with col3:
         st.write(f'<p style="font-size:20px">amount <br /> {total2}</p>', unsafe_allow_html=True)
+
  # birthday cake
  with col1:
         st.markdown('<p style="font-size:25px">Birthday cake <br /> 1kg=240</p>', unsafe_allow_html=True)
@@ -128,21 +136,24 @@ if a=="Home":
         total8 = kg8 * number8
  with col3:
         st.write(f'<p style="font-size:20px">amount <br /> {total8}</p>', unsafe_allow_html=True)
+
+ # calculate total amount using add function
  grand_total = total1 + total2 + total3 + total4 + total + total5 + total6 + total7 + total8
  st.markdown(f'<p style="font-size:20px">over all total price={grand_total}</p>',unsafe_allow_html=True)
- 
-#make as dataframe
+
+ #create dataframe using pandas
+
  data={"cakes":['plum','plain','cream','birthday_cake','blackforest',
                'plum piece','browny peace','blackforest peace','cup cake peace'],
    "1kg_price":[kg,kg1,kg2,kg3,kg4,kg5,kg6,kg7,kg8],
       "buy_kg":[number,number1,number2,number3,number4,number5,number6,number7,number8],
       "total each":[total,total1,total2,total3,total4,total5,total6,total7,total8],
-      "total":[grand_total],
-       "date=":[date]}
+      "total":[grand_total,0,0,0,0,0,0,0,0],
+       "date=":[date,0,0,0,0,0,0,0,0]}
  df = pd.DataFrame.from_dict(data, orient='index')
  st.dataframe(df)
-     
- #upload to database    
+
+ #create upload button for data into  firebase database
  if st.button("upload to database"):
         config = {'apiKey': "AIzaSyChEJILixmFxMhyImwUyrVwaHpYqVt4oRw",
                   'authDomain': "onyx-elevator-352407.firebaseapp.com",
