@@ -1,7 +1,8 @@
-import pyautogui
 import streamlit as st
 import pandas as pd
 import pyrebase
+
+#steamlit sidebar for application decoration
 a = st.sidebar.radio("Navigation",["working rules","Home","about us","version"])
 if a=="working rules":
      st.header("WELCOME TO SETHURAM TRADERS")
@@ -129,9 +130,8 @@ if a=="Home":
         st.write(f'<p style="font-size:20px">amount <br /> {total8}</p>', unsafe_allow_html=True)
  grand_total = total1 + total2 + total3 + total4 + total + total5 + total6 + total7 + total8
  st.markdown(f'<p style="font-size:20px">over all total price={grand_total}</p>',unsafe_allow_html=True)
- if st.button("Reset"):
-    pyautogui.hotkey("ctrl", "F5")
-
+ 
+#make as dataframe
  data={"cakes":['plum','plain','cream','birthday_cake','blackforest',
                'plum piece','browny peace','blackforest peace','cup cake peace'],
    "1kg_price":[kg,kg1,kg2,kg3,kg4,kg5,kg6,kg7,kg8],
@@ -141,6 +141,8 @@ if a=="Home":
        "date=":[date]}
  df = pd.DataFrame.from_dict(data, orient='index')
  st.dataframe(df)
+     
+ #upload to database    
  if st.button("upload to database"):
         config = {'apiKey': "AIzaSyChEJILixmFxMhyImwUyrVwaHpYqVt4oRw",
                   'authDomain': "onyx-elevator-352407.firebaseapp.com",
