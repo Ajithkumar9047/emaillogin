@@ -11,7 +11,7 @@ if a=="Home":
      st.write("1.Costless application")
      st.write("2.Easy understandable")
      st.write("3.we can able to store the data to data base")
-     st.header("MOBILE USERS..PLEASE PRESS THE ARROW MARK ON TOP LEFT SIDE")
+     st.header("MOBILE USERS..PLEASE ENABLE DESKTOP SITE ON YOUR BROWSER ")
 
 if a=="version":
 
@@ -39,7 +39,7 @@ if a=="PROJECT":
  # plum cake front end using 'html'
 
  with col1:
-        st.markdown('<p style="font-size:20px">plum cake <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:20px">plum cake <br /> 1kg=250</p>', unsafe_allow_html=True)
 
 # in this column get product kg and calculate total
  with col2:
@@ -51,7 +51,7 @@ if a=="PROJECT":
 
  # plain cake
  with col1:
-        st.markdown('<p style="font-size:20px">plain cake <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:20px">plain cake <br /> 1kg=150</p>', unsafe_allow_html=True)
 
  with col2:
         number1 = st.number_input(label="plain kg", step=0.5, format="%.1f")
@@ -62,7 +62,7 @@ if a=="PROJECT":
 
  # cream cake
  with col1:
-        st.markdown('<p style="font-size:25px">cream cake <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:25px">cream cake <br /> 1kg=440</p>', unsafe_allow_html=True)
 
  with col2:
         number2 = st.number_input(label="cream kg", step=0.5, format="%.1f")
@@ -73,7 +73,7 @@ if a=="PROJECT":
 
  # birthday cake
  with col1:
-        st.markdown('<p style="font-size:25px">Birthday cake <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:25px">Birthday cake <br /> 1kg=480</p>', unsafe_allow_html=True)
 
  with col2:
         number3 = st.number_input(label="birthday kg", step=0.5, format="%.1f")
@@ -84,7 +84,7 @@ if a=="PROJECT":
 
  # blackforest
  with col1:
-        st.markdown('<p style="font-size:25px">blackforest cake <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:25px">blackforest cake <br /> 1kg=545</p>', unsafe_allow_html=True)
 
  with col2:
         number4 = st.number_input(label="bf kg", step=0.5, format="%.1f")
@@ -95,7 +95,7 @@ if a=="PROJECT":
 
  # plum one piece
  with col1:
-        st.markdown('<p style="font-size:25px">plum cake peace <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:25px">plum cake peace <br /> 1kg=20</p>', unsafe_allow_html=True)
 
  with col2:
         number5 = st.number_input(label="plum 1 peace", step=1.0, format="%.1f")
@@ -106,7 +106,7 @@ if a=="PROJECT":
 
  # browne peace
  with col1:
-        st.markdown('<p style="font-size:25px">browne cake peace <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:25px">browne cake peace <br /> 1kg=50</p>', unsafe_allow_html=True)
 
  with col2:
         number6 = st.number_input(label="1 peace browne", step=1.0, format="%.1f")
@@ -117,7 +117,7 @@ if a=="PROJECT":
 
  # blackforest peace
  with col1:
-        st.markdown('<p style="font-size:20px">blackforest 1 peace <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:20px">blackforest 1 peace <br /> 1kg=80</p>', unsafe_allow_html=True)
 
  with col2:
         number7 = st.number_input(label="blackforest 1 peace", step=1.0, format="%.1f")
@@ -128,7 +128,7 @@ if a=="PROJECT":
 
  # cupcake
  with col1:
-        st.markdown('<p style="font-size:20px">cup cake 1 peace <br /> 1kg=240</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:20px">cup cake 1 peace <br /> 1kg=30</p>', unsafe_allow_html=True)
 
  with col2:
         number8 = st.number_input(label="cup cake 1 peace", step=1.0, format="%.1f")
