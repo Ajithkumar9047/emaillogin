@@ -13,3 +13,4 @@ pyttsx3==2.90
 nltk==3.8.1
 scikit-learn==1.2.0
 pyresparser==1.0.6
+spacy==2.3.9
