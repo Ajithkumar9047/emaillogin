@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-\
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz --no-deps
 path = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 for i in range(len(path)):
             df = (path[0])
