@@ -1,4 +1,4 @@
-
+spacy==2.3.9
 streamlit==1.14.0
 pyttsx3==2.90
 nltk==3.8.1
