@@ -4,6 +4,3 @@ pyttsx3==2.90
 nltk==3.8.1
 scikit-learn==1.2.0
 pyresparser==1.0.6
-
-python3 -m spacy download en_core_web_sm
-pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
