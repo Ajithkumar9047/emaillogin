@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import spacy
 path = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 for i in range(len(path)):
             df = (path[0])
