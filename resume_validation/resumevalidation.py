@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-spacy download en_core_web_sm
-nlp = spacy.load('en_core_web_sm')
+import spacy 
+nlp = spacy.load("en_core_web_sm")
 path = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 for i in range(len(path)):
             df = (path[0])
