@@ -1,14 +1,5 @@
-plotly==5.11.0
-pandas==1.5.1
+
 streamlit==1.14.0
-snscrape==0.4.3.20220106
-pymongo==3.13.0
-numpy==1.23.4
-tkcalendar==1.6.1
-requests==2.11.1
-future==0.18.2
-ChatterBot==1.0.4
-Pillow==9.3.0
 pyttsx3==2.90
 nltk==3.8.1
 scikit-learn==1.2.0
