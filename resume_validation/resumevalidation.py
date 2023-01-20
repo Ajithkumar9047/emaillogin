@@ -12,7 +12,8 @@ import nltk
 nltk.download('stopwords')
 from pyresparser import ResumeParser
 def main():
-
+    import en_core_web_sm
+    nlp = en_core_web_sm.load()
     data = ResumeParser(df).get_extracted_data()
     st.write(data['skills'])
     data2 = ResumeParser(df2).get_extracted_data()
