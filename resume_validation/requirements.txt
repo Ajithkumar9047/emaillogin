@@ -4,4 +4,3 @@ pyttsx3
 nltk
 scikit-learn
 pyresparser
-click._bashcomplete
