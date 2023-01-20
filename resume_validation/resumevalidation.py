@@ -11,9 +11,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 nltk.download('stopwords')
 from pyresparser import ResumeParser
+import en_core_web_sm
+nlp = spacy.load("en_core_web_sm")
 def main():
-    import en_core_web_sm
-    nlp = spacy.load("en_core_web_sm")
+    
     data = ResumeParser(df).get_extracted_data()
     st.write(data['skills'])
     data2 = ResumeParser(df2).get_extracted_data()
